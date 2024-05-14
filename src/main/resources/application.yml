@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: jwt-authentication-server
+  # JPA Configuration
+  #  jpa:
+  #    generate-ddl: true
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: WARN
+    web: INFO
+    com.example: DEBUG
+
+# JWT expiration is 1 hour
+token:
+# node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+  expirationms: 3600000
+  secret:
+    key: 71796b333dd0694f336e35152c49af0b2681e1a23cb5e67b6e3807517d363040
